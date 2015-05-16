@@ -1,48 +1,36 @@
 $(document).ready(function(){
 
-	rows = 15;
-	columns = 15;
-	option = 'black';
+	rows = 10;
+	columns = 10;
+	option = 'colors';
 
 	createGrid (rows, columns);
 
 
 
-	$('#button').click(function(){
+	$('#button').on("click", function(){
 
 		$('.little').remove();
 		rows=prompt("Please enter the number of rows");
 		columns=prompt("Please enter the number of columns");
-		console.log(rows);
-		console.log(columns);
 		createGrid (rows, columns);
 
 	});
 
 
 	if(option == 'colors'){
-		$('.little').mouseover(function(){
-
-			$(this).css("background-color",randomColor());
-
+		$("#container").on("mouseover", ".little", function(){
+		  $(this).css("background-color",randomColor());
 		});
 
-		$('.little').mouseout( function(){
-
-		});
 	}
 	else {
-		$('.little').mouseover(function(){
 
-			$(this).addClass('blacked');
-			console.log("hola");
-
-		});
-
-		$('.little').mouseout( function(){
-
+		$("#container").on("mouseover", ".little", function(){
+		  $(this).addClass('blacked');
 		});
 	}
+
 });
 
 
@@ -55,8 +43,10 @@ function createGrid(rows, columns){
 
 	for (var i = 1; i <= rows; i++) {
 		for (var j = 1; j <= columns; j++) {
-        	$("#container").append("<div class ='little' 'id='" + i + j + "'></div>");
+        	//$("#container").append("<div class ='little' 'id='" + i + j + "'></div>");
+        	$("#container").append("<div class ='little'></div>");
         }
+
     } 
     $('.little').height("30px");
 	$('.little').width("30px");
