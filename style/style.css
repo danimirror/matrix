@@ -1,0 +1,28 @@
+
+#button {
+	height: 30px;
+	width: 300px;
+	border-radius:5px;
+	background-color: #FF3D57;
+	margin: 5px 5px ;
+
+}
+
+.little {
+    border-radius:5px;
+    background-color: #2C7CC3;
+    display: inline-block;
+}
+#container {
+
+}
+
+.blacked {
+	background-color: #000000;
+}
+
+p {
+	color: #FFFFFF;
+	text-align: center;
+	margin: auto;
+}
